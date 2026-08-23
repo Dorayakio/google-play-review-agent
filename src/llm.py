@@ -5,6 +5,7 @@ deterministic demo mode.
 """
 
 import os
+from pathlib import Path
 from typing import Any, Dict, List, Optional
 
 
@@ -17,7 +18,10 @@ class OpenAIChatClient:
                  base_url: Optional[str] = None) -> None:
         try:
             from dotenv import load_dotenv
-            load_dotenv()
+            # Resolve the project-level .env from this file instead of relying
+            # on the directory from which Streamlit was launched.
+            project_env = Path(__file__).resolve().parents[1] / ".env"
+            load_dotenv(dotenv_path=project_env)
         except ImportError:
             # Environment variables exported by the shell still work without
             # python-dotenv; the dependency only makes .env convenient locally.
