@@ -30,8 +30,10 @@ Deliveroo 法国区评论只是默认演示数据，不是项目的使用范围�
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
-streamlit run app.py
+python -m streamlit run app.py
 ```
+
+如果提示找不到 `streamlit`，请确保已经激活项目的虚拟环境，并使用上面的 `python -m streamlit` 启动方式；它会直接使用当前 Python 环境中的 Streamlit。
 
 启动后，应用默认加载 `data/samples/deliveroo_reviews_fr.csv`。
 
@@ -56,6 +58,8 @@ LLM_BASE_URL=https://api.deepseek.com
 如果 DeepSeek 控制台显示的是其他可用模型名称，以控制台中的名称为准。项目会通过 OpenAI 兼容接口调用 DeepSeek 的 Chat Completion、Tool Calling 和 JSON 输出能力。
 
 如果使用其他 OpenAI 兼容服务，也可以继续使用 `OPENAI_API_KEY` 和自定义 `LLM_BASE_URL`。
+
+`.env.example` 只是一份配置模板，真实密钥请写入项目根目录的 `.env`，不要写入 `.env.example` 或提交到 Git。
 
 不要把 `.env`、API Key 或账号信息提交到 GitHub。项目的 `.gitignore` 已经排除 `.env`。
 
