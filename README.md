@@ -40,6 +40,7 @@ python -m streamlit run app.py
 在侧边栏可以选择：
 
 - 中文或 English 界面；
+- 国家/地区和评论语言（常用选项会自动使用正确代码）；
 - 使用缓存/演示数据；
 - 根据 Google Play 包名抓取新评论；
 - 上传自己的 CSV 文件。

@@ -14,6 +14,42 @@ from src.tools import ToolContext
 ROOT = Path(__file__).resolve().parent
 DEFAULT_APP_ID = "com.deliveroo.orderapp"
 DEFAULT_CACHE = ROOT / "data" / "samples" / "deliveroo_reviews_fr.csv"
+CUSTOM_OPTION = "custom"
+
+COUNTRY_OPTIONS = [
+    ("fr", "法国 / France"),
+    ("us", "美国 / United States"),
+    ("gb", "英国 / United Kingdom"),
+    ("ca", "加拿大 / Canada"),
+    ("au", "澳大利亚 / Australia"),
+    ("de", "德国 / Germany"),
+    ("es", "西班牙 / Spain"),
+    ("it", "意大利 / Italy"),
+    ("nl", "荷兰 / Netherlands"),
+    ("jp", "日本 / Japan"),
+    ("kr", "韩国 / South Korea"),
+    ("hk", "中国香港 / Hong Kong"),
+    ("tw", "中国台湾 / Taiwan"),
+    ("sg", "新加坡 / Singapore"),
+    ("in", "印度 / India"),
+    (CUSTOM_OPTION, "自定义 / Custom"),
+]
+
+REVIEW_LANGUAGE_OPTIONS = [
+    ("fr", "法语 / French"),
+    ("en", "英语 / English"),
+    ("zh", "中文 / Chinese"),
+    ("de", "德语 / German"),
+    ("es", "西班牙语 / Spanish"),
+    ("it", "意大利语 / Italian"),
+    ("ja", "日语 / Japanese"),
+    ("ko", "韩语 / Korean"),
+    ("pt", "葡萄牙语 / Portuguese"),
+    ("ru", "俄语 / Russian"),
+    ("tr", "土耳其语 / Turkish"),
+    ("hi", "印地语 / Hindi"),
+    (CUSTOM_OPTION, "自定义 / Custom"),
+]
 
 UI_TEXT = {
     "zh": {
@@ -24,6 +60,8 @@ UI_TEXT = {
         "package_name": "Google Play 包名",
         "country": "国家/地区",
         "review_language": "评论语言",
+        "custom_country": "自定义国家/地区代码（例如 de）",
+        "custom_language": "自定义评论语言代码（例如 de）",
         "review_count": "评论数量",
         "sort": "排序方式",
         "newest": "最新评论",
@@ -77,6 +115,8 @@ UI_TEXT = {
         "package_name": "Google Play package name",
         "country": "Country",
         "review_language": "Review language",
+        "custom_country": "Custom country code (e.g. de)",
+        "custom_language": "Custom review language code (e.g. de)",
         "review_count": "Review count",
         "sort": "Sort",
         "newest": "Newest",
@@ -134,6 +174,10 @@ def _source_label(language: str, source: str) -> str:
     return _t(language, source)
 
 
+def _option_label(options: list[tuple[str, str]], value: str) -> str:
+    return dict(options).get(value, value)
+
+
 def main() -> None:
     try:
         import streamlit as st
@@ -153,8 +197,26 @@ def main() -> None:
 
         st.header(t("data_source"))
         app_id = st.text_input(t("package_name"), value=DEFAULT_APP_ID)
-        country = st.text_input(t("country"), value="fr")
-        language = st.text_input(t("review_language"), value="fr")
+        country_choice = st.selectbox(
+            t("country"),
+            [code for code, _ in COUNTRY_OPTIONS],
+            index=0,
+            format_func=lambda item: _option_label(COUNTRY_OPTIONS, item),
+        )
+        country = (
+            st.text_input(t("custom_country"), value="", placeholder="de").strip().lower()
+            if country_choice == CUSTOM_OPTION else country_choice
+        )
+        language_choice = st.selectbox(
+            t("review_language"),
+            [code for code, _ in REVIEW_LANGUAGE_OPTIONS],
+            index=0,
+            format_func=lambda item: _option_label(REVIEW_LANGUAGE_OPTIONS, item),
+        )
+        language = (
+            st.text_input(t("custom_language"), value="", placeholder="de").strip().lower()
+            if language_choice == CUSTOM_OPTION else language_choice
+        )
         count = st.slider(t("review_count"), min_value=20, max_value=5000, value=500, step=20)
         sort = st.selectbox(
             t("sort"),
