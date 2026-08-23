@@ -1,0 +1,20 @@
+review_id,app_id,score,content,review_date,country,language
+social-1,com.example.social,1,The app keeps crashing after the latest update,2026-02-01,gb,en
+social-2,com.example.social,2,Too many ads interrupt every conversation,2026-02-02,gb,en
+social-3,com.example.social,2,It takes forever to load the feed,2026-02-03,gb,en
+social-4,com.example.social,1,Customer support never answers,2026-02-04,gb,en
+social-5,com.example.social,3,The new navigation is confusing,2026-02-05,gb,en
+social-6,com.example.social,5,Great community and simple interface,2026-02-06,gb,en
+social-7,com.example.social,2,The popup ads make the app difficult to use,2026-02-07,gb,en
+social-8,com.example.social,4,Works well most of the time,2026-02-08,gb,en
+social-9,com.example.social,1,The app shows an error and then crashes,2026-02-09,gb,en
+social-10,com.example.social,2,The feed loads very slowly,2026-02-10,gb,en
+social-11,com.example.social,2,Support did not reply to my report,2026-02-11,gb,en
+social-12,com.example.social,3,It is difficult to find the settings,2026-02-12,gb,en
+social-13,com.example.social,2,There are too many pop-up ads,2026-02-13,gb,en
+social-14,com.example.social,1,The latest update freezes on launch,2026-02-14,gb,en
+social-15,com.example.social,2,My account login verification is broken,2026-02-15,gb,en
+social-16,com.example.social,2,The interface is confusing for new users,2026-02-16,gb,en
+social-17,com.example.social,1,The app uses too much data,2026-02-17,gb,en
+social-18,com.example.social,2,The subscription price is not clear,2026-02-18,gb,en
+social-19,com.example.social,3,Important content is missing from the feed,2026-02-19,gb,en

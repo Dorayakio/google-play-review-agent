@@ -1,0 +1,50 @@
+{"review_id":"finance-1","app_id":"com.example.finance","expected_theme":"Reliability and bugs","label":"crash"}
+{"review_id":"finance-2","app_id":"com.example.finance","expected_theme":"Login and account access","label":"login"}
+{"review_id":"finance-3","app_id":"com.example.finance","expected_theme":"Pricing, payments and subscriptions","label":"payment"}
+{"review_id":"finance-4","app_id":"com.example.finance","expected_theme":"Performance and battery/data use","label":"performance"}
+{"review_id":"finance-6","app_id":"com.example.finance","expected_theme":"Pricing, payments and subscriptions","label":"refund"}
+{"review_id":"finance-7","app_id":"com.example.finance","expected_theme":"Reliability and bugs","label":"freeze"}
+{"review_id":"social-1","app_id":"com.example.social","expected_theme":"Reliability and bugs","label":"crash"}
+{"review_id":"social-2","app_id":"com.example.social","expected_theme":"Ads and interruptions","label":"ads"}
+{"review_id":"social-3","app_id":"com.example.social","expected_theme":"Performance and battery/data use","label":"loading"}
+{"review_id":"social-4","app_id":"com.example.social","expected_theme":"Customer support and response","label":"support"}
+{"review_id":"social-5","app_id":"com.example.social","expected_theme":"Usability and navigation","label":"navigation"}
+{"review_id":"social-7","app_id":"com.example.social","expected_theme":"Ads and interruptions","label":"popup"}
+{"review_id":"education-1","app_id":"com.example.education","expected_theme":"Performance and battery/data use","label":"loading"}
+{"review_id":"education-2","app_id":"com.example.education","expected_theme":"Login and account access","label":"login"}
+{"review_id":"education-3","app_id":"com.example.education","expected_theme":"Pricing, payments and subscriptions","label":"subscription"}
+{"review_id":"education-4","app_id":"com.example.education","expected_theme":"Usability and navigation","label":"interface"}
+{"review_id":"education-5","app_id":"com.example.education","expected_theme":"Customer support and response","label":"refund"}
+{"review_id":"education-7","app_id":"com.example.education","expected_theme":"Performance and battery/data use","label":"battery"}
+{"review_id":"finance-9","app_id":"com.example.finance","expected_theme":"Pricing, payments and subscriptions","label":"payment"}
+{"review_id":"finance-10","app_id":"com.example.finance","expected_theme":"Reliability and bugs","label":"crash"}
+{"review_id":"finance-11","app_id":"com.example.finance","expected_theme":"Customer support and response","label":"support"}
+{"review_id":"finance-12","app_id":"com.example.finance","expected_theme":"Usability and navigation","label":"interface"}
+{"review_id":"finance-13","app_id":"com.example.finance","expected_theme":"Pricing, payments and subscriptions","label":"subscription"}
+{"review_id":"finance-14","app_id":"com.example.finance","expected_theme":"Performance and battery/data use","label":"battery"}
+{"review_id":"finance-15","app_id":"com.example.finance","expected_theme":"Login and account access","label":"password"}
+{"review_id":"finance-16","app_id":"com.example.finance","expected_theme":"Reliability and bugs","label":"freeze"}
+{"review_id":"finance-17","app_id":"com.example.finance","expected_theme":"Pricing, payments and subscriptions","label":"fee"}
+{"review_id":"finance-18","app_id":"com.example.finance","expected_theme":"Performance and battery/data use","label":"slow"}
+{"review_id":"finance-19","app_id":"com.example.finance","expected_theme":"Content or feature quality","label":"missing feature"}
+{"review_id":"social-9","app_id":"com.example.social","expected_theme":"Reliability and bugs","label":"error"}
+{"review_id":"social-10","app_id":"com.example.social","expected_theme":"Performance and battery/data use","label":"slow"}
+{"review_id":"social-11","app_id":"com.example.social","expected_theme":"Customer support and response","label":"support"}
+{"review_id":"social-12","app_id":"com.example.social","expected_theme":"Usability and navigation","label":"settings"}
+{"review_id":"social-13","app_id":"com.example.social","expected_theme":"Ads and interruptions","label":"ads"}
+{"review_id":"social-14","app_id":"com.example.social","expected_theme":"Reliability and bugs","label":"freeze"}
+{"review_id":"social-15","app_id":"com.example.social","expected_theme":"Login and account access","label":"login"}
+{"review_id":"social-16","app_id":"com.example.social","expected_theme":"Usability and navigation","label":"interface"}
+{"review_id":"social-17","app_id":"com.example.social","expected_theme":"Performance and battery/data use","label":"data"}
+{"review_id":"social-18","app_id":"com.example.social","expected_theme":"Pricing, payments and subscriptions","label":"subscription"}
+{"review_id":"social-19","app_id":"com.example.social","expected_theme":"Content or feature quality","label":"content"}
+{"review_id":"education-9","app_id":"com.example.education","expected_theme":"Reliability and bugs","label":"crash"}
+{"review_id":"education-10","app_id":"com.example.education","expected_theme":"Performance and battery/data use","label":"loading"}
+{"review_id":"education-11","app_id":"com.example.education","expected_theme":"Customer support and response","label":"support"}
+{"review_id":"education-12","app_id":"com.example.education","expected_theme":"Usability and navigation","label":"navigation"}
+{"review_id":"education-13","app_id":"com.example.education","expected_theme":"Pricing, payments and subscriptions","label":"charge"}
+{"review_id":"education-14","app_id":"com.example.education","expected_theme":"Reliability and bugs","label":"freeze"}
+{"review_id":"education-15","app_id":"com.example.education","expected_theme":"Login and account access","label":"password"}
+{"review_id":"education-16","app_id":"com.example.education","expected_theme":"Performance and battery/data use","label":"battery"}
+{"review_id":"education-17","app_id":"com.example.education","expected_theme":"Usability and navigation","label":"interface"}
+{"review_id":"education-18","app_id":"com.example.education","expected_theme":"Content or feature quality","label":"missing content"}

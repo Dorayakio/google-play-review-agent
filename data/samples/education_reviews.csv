@@ -1,0 +1,19 @@
+review_id,app_id,score,content,review_date,country,language
+education-1,com.example.education,2,Videos freeze and the lesson will not load,2026-03-01,ca,en
+education-2,com.example.education,1,I cannot log in after changing my password,2026-03-02,ca,en
+education-3,com.example.education,2,The subscription price is not clear,2026-03-03,ca,en
+education-4,com.example.education,3,The interface is confusing on a small screen,2026-03-04,ca,en
+education-5,com.example.education,1,Support ignored my refund request,2026-03-05,ca,en
+education-6,com.example.education,5,Helpful lessons and good explanations,2026-03-06,ca,en
+education-7,com.example.education,2,The app is slow and uses too much battery,2026-03-07,ca,en
+education-8,com.example.education,4,Good content but the app needs polish,2026-03-08,ca,en
+education-9,com.example.education,1,The lesson screen crashes after login,2026-03-09,ca,en
+education-10,com.example.education,2,The video takes too long to load,2026-03-10,ca,en
+education-11,com.example.education,2,Support has not answered my question,2026-03-11,ca,en
+education-12,com.example.education,3,The course navigation is confusing,2026-03-12,ca,en
+education-13,com.example.education,2,The subscription renewal charge is unclear,2026-03-13,ca,en
+education-14,com.example.education,1,The app freezes during a lesson,2026-03-14,ca,en
+education-15,com.example.education,2,I cannot sign in with my new password,2026-03-15,ca,en
+education-16,com.example.education,2,The app is slow and drains battery,2026-03-16,ca,en
+education-17,com.example.education,3,The interface makes it hard to find lessons,2026-03-17,ca,en
+education-18,com.example.education,2,Several expected lessons are missing,2026-03-18,ca,en

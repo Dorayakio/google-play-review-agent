@@ -1,0 +1,20 @@
+review_id,app_id,score,content,review_date,country,language
+finance-1,com.example.finance,1,The app crashes when I open my account,2026-01-01,us,en
+finance-2,com.example.finance,2,Login verification never arrives and I cannot access my account,2026-01-02,us,en
+finance-3,com.example.finance,1,I was charged twice and support has not replied,2026-01-03,us,en
+finance-4,com.example.finance,2,The new update is very slow when loading transactions,2026-01-04,us,en
+finance-5,com.example.finance,5,Easy to use and reliable,2026-01-05,us,en
+finance-6,com.example.finance,2,The refund process is confusing,2026-01-06,us,en
+finance-7,com.example.finance,1,The app freezes after I enter my password,2026-01-07,us,en
+finance-8,com.example.finance,4,Useful for checking my balance,2026-01-08,us,en
+finance-9,com.example.finance,2,The payment failed with an unknown error,2026-01-09,us,en
+finance-10,com.example.finance,1,The app crashes when I open the transfer screen,2026-01-10,us,en
+finance-11,com.example.finance,2,Customer support still has not answered,2026-01-11,us,en
+finance-12,com.example.finance,3,The interface is confusing after the redesign,2026-01-12,us,en
+finance-13,com.example.finance,2,The subscription renewal price was unexpected,2026-01-13,us,en
+finance-14,com.example.finance,2,The app is slow and drains my battery,2026-01-14,us,en
+finance-15,com.example.finance,1,Password recovery does not work,2026-01-15,us,en
+finance-16,com.example.finance,1,It freezes whenever I try to upload a document,2026-01-16,us,en
+finance-17,com.example.finance,2,I do not understand the latest account fee,2026-01-17,us,en
+finance-18,com.example.finance,3,It takes too long to load my transactions,2026-01-18,us,en
+finance-19,com.example.finance,2,A key feature is missing from the new version,2026-01-19,us,en
