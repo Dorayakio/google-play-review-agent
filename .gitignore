@@ -7,5 +7,6 @@ venv/
 .idea/
 data/cache/
 outputs/
+output/
 archive/
 *.log
