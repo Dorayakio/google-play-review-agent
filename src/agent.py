@@ -122,6 +122,27 @@ class ReviewAgent:
                     )
                     return self._ground_report(report)
                 break
+            # If the model spent all tool rounds researching, give it one final
+            # synthesis request instead of immediately falling back offline.
+            messages.append({
+                "role": "user",
+                "content": "The research step is complete. Return only valid JSON using this exact structure: %s" %
+                           json.dumps(REPORT_SCHEMA_HINT, ensure_ascii=False),
+            })
+            final_response = self.client.chat(messages, [], final=True)
+            final_message = final_response.choices[0].message
+            payload = _parse_json(getattr(final_message, "content", None) or "")
+            if payload:
+                report = report_from_dict(
+                    payload,
+                    default_app_id=self.context.app_id,
+                    default_country=self.context.country,
+                    default_language=self.context.language,
+                    output_language=self.output_language,
+                    trace=trace,
+                    demo_mode=False,
+                )
+                return self._ground_report(report)
             return self._demo_report(question, trace, "The model did not return a valid structured report.")
         except Exception as exc:
             return self._demo_report(question, trace, "Live model call failed: %s" % exc)

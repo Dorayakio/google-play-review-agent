@@ -83,7 +83,8 @@ UI_TEXT = {
         "report_language": "报告语言",
         "analyze": "分析评论",
         "analyzing": "正在分析评论……",
-        "demo_mode": "演示模式：未配置 LLM API Key，本报告由离线规则生成。",
+        "demo_mode_no_key": "演示模式：未配置 LLM API Key，本报告由离线规则生成。",
+        "demo_mode_fallback": "已尝试调用在线模型，但模型未返回有效结构化报告；本报告由离线规则生成。",
         "reviews": "评论数",
         "average_score": "平均评分",
         "low_score_rate": "低评分占比",
@@ -138,7 +139,8 @@ UI_TEXT = {
         "report_language": "Report language",
         "analyze": "Analyze reviews",
         "analyzing": "Running review analysis...",
-        "demo_mode": "Demo mode: no LLM API key was configured, so the offline fallback generated this report.",
+        "demo_mode_no_key": "Demo mode: no LLM API key was configured, so the offline fallback generated this report.",
+        "demo_mode_fallback": "The live model was called but did not return a valid structured report; the offline fallback generated this report.",
         "reviews": "Reviews",
         "average_score": "Average score",
         "low_score_rate": "Low-score rate",
@@ -323,7 +325,13 @@ def _built_in_demo_reviews(app_id: str, country: str, language: str) -> List[Rev
 def _render_report(st: object, report: InsightReport, language: str) -> None:
     t = lambda key, **values: _t(language, key, **values)
     if report.demo_mode:
-        st.warning(t("demo_mode"))
+        fallback_reason = ""
+        if report.trace and report.trace[-1].name == "offline_demo_fallback":
+            fallback_reason = report.trace[-1].result_summary
+        if "No API key configured" in fallback_reason:
+            st.warning(t("demo_mode_no_key"))
+        else:
+            st.warning(t("demo_mode_fallback"))
     metrics = st.columns(4)
     metrics[0].metric(t("reviews"), report.review_count)
     metrics[1].metric(t("average_score"), "%.2f/5" % report.average_score)
