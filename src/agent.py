@@ -199,7 +199,7 @@ class ReviewAgent:
         return """You are a product and user-research analyst for a generic Google Play app review dataset.
 The app can belong to any category. Do not assume a delivery, finance, social or gaming context.
 Answer in %s. Use tools to inspect the dataset and original reviews before making claims.
-You may discover 3-7 themes; do not use a fixed product-specific taxonomy.
+You may discover 3-5 themes; do not use a fixed product-specific taxonomy.
 Use the following transparent priority formula: priority_score = 0.5*prevalence + 0.3*severity + 0.2*recency.
 Prevalence, severity and recency must be normalized to 0..1 and shown separately.
 Never invent review IDs, quotes, counts or dates. Evidence quotes must be copied exactly from tool results.
@@ -216,7 +216,15 @@ Clearly separate facts from inferences. Return JSON only when you are ready, wit
                 "type": "function",
                 "function": {"name": name, "arguments": raw_arguments},
             })
-        return {"role": "assistant", "content": getattr(message, "content", None) or "", "tool_calls": calls}
+        assistant_message = {
+            "role": "assistant",
+            "content": getattr(message, "content", None) or "",
+            "tool_calls": calls,
+        }
+        reasoning_content = getattr(message, "reasoning_content", None)
+        if reasoning_content:
+            assistant_message["reasoning_content"] = reasoning_content
+        return assistant_message
 
     @staticmethod
     def _tool_call_parts(call: Any) -> Tuple[str, str, str]:

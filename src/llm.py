@@ -52,7 +52,13 @@ class OpenAIChatClient:
             "model": self.model,
             "messages": messages,
             "temperature": 0.2,
+            "max_tokens": 6000 if final else 1600,
         }
+        # DeepSeek v4 models default to thinking mode. The agent uses the
+        # non-thinking tool-call format, so disable it for stable multi-turn
+        # tool calls and lower token usage.
+        if self.model.startswith("deepseek-v4") and self.base_url and "deepseek.com" in self.base_url:
+            request["extra_body"] = {"thinking": {"type": "disabled"}}
         if tools:
             request["tools"] = tools
             request["tool_choice"] = "auto"
