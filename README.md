@@ -75,61 +75,6 @@ python main.py --app-id com.example.app --country us --language en --count 500 -
 
 Google Play 可能因为网络环境或访问频率限制而抓取失败。此时可以使用缓存数据或直接上传 CSV。
 
-## 如何向他人演示
-
-### 方式一：无 API Key 的稳定 Demo
-
-这是最适合面试或现场展示的方式，不依赖模型账户和 Google Play 实时网络。
-
-1. 按照上面的安装步骤启动应用：
-
-   ```powershell
-   streamlit run app.py
-   ```
-
-2. 在左侧选择 `Cached/demo`；
-3. 保持默认的 Deliveroo 示例数据；
-4. 将报告语言切换为中文；
-5. 点击 `Analyze reviews`；
-6. 展示总体评分、优先级主题、原始评论证据、事实/推断区分和报告下载。
-
-可以直接使用这个问题：
-
-```text
-请找出该应用最重要的用户问题，按优先级排序，并为每个问题引用原始评论证据。
-```
-
-这种模式使用本地离线主题发现逻辑，优点是稳定、可重复；界面会明确显示 `Demo mode`，不要把它描述成真实的云端 LLM 调用。
-
-### 方式二：真实 LLM Agent 演示
-
-如果希望展示 Tool Calling：
-
-1. 在 `.env` 中配置 `LLM_API_KEY` 或 `OPENAI_API_KEY`；
-2. 可选配置 `LLM_MODEL`，例如 `gpt-5-mini`；
-3. 重新启动 Streamlit；
-4. 使用缓存评论或上传 CSV，避免现场等待 Google Play 抓取；
-5. 点击 `Analyze reviews`；
-6. 展开 `Agent tool trace`，展示 Agent 调用了哪些工具；
-7. 展示每个主题对应的真实评论 ID、原文和产品建议。
-
-演示时可以追问：
-
-```text
-哪些问题最严重？请分别说明数据事实、你的推断和建议，并引用评论原文。
-```
-
-### 推荐的 3 分钟讲解顺序
-
-1. 先说明业务问题：用户评论很多，人工难以快速发现重复痛点；
-2. 输入一个 App 评论数据集；
-3. 让 Agent 自动发现主题，而不是使用 Deliveroo 专属分类；
-4. 展示主题优先级公式和真实证据；
-5. 展示 Tool Calling 轨迹；
-6. 最后下载结构化报告，并说明当前限制是评论只来自 Google Play。
-
-现场演示建议优先使用缓存数据。Google Play 实时抓取可能受到网络、地区或访问频率限制，不适合作为唯一演示路径。
-
 ## CSV 格式
 
 标准字段如下：
