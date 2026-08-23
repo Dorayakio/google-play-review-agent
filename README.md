@@ -43,18 +43,19 @@ streamlit run app.py
 
 如果没有配置 LLM API Key，应用会自动使用离线 Demo 模式，仍然可以展示主题发现、证据和报告导出功能。
 
-## 配置 LLM
+## 配置 DeepSeek
 
-复制 `.env.example` 为 `.env`，填写以下配置中的任意一个 Key：
+项目使用 OpenAI SDK 作为兼容客户端，但实际可以直接调用 DeepSeek API。复制 `.env.example` 为 `.env`，然后填写：
 
 ```text
-LLM_API_KEY=你的_API_Key
-OPENAI_API_KEY=你的_API_Key
-LLM_MODEL=gpt-4o-mini
-LLM_BASE_URL=
+LLM_API_KEY=你的_DeepSeek_API_Key
+LLM_MODEL=deepseek-chat
+LLM_BASE_URL=https://api.deepseek.com
 ```
 
-`LLM_BASE_URL` 可选，用于兼容 OpenAI 接口格式的其他模型服务。
+如果 DeepSeek 控制台显示的是其他可用模型名称，以控制台中的名称为准。项目会通过 OpenAI 兼容接口调用 DeepSeek 的 Chat Completion、Tool Calling 和 JSON 输出能力。
+
+如果使用其他 OpenAI 兼容服务，也可以继续使用 `OPENAI_API_KEY` 和自定义 `LLM_BASE_URL`。
 
 不要把 `.env`、API Key 或账号信息提交到 GitHub。项目的 `.gitignore` 已经排除 `.env`。
 
